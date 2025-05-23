@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #e0e0e0;
+  text-align: center;
+  padding: 40px 20px;
+  user-select: none;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff;
+}
+
+#game {
+  width: 280px;
+  height: 280px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 12px;
+  background: #12232e;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #0ff5;
+  user-select: none;
+}
+
+.cell {
+  width: 60px;
+  height: 60px;
+  background: #1b2a38;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.15s;
+  box-shadow: inset 0 0 8px #0008;
+}
+
+.cell:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #0ff8;
+}
+
+.cell.active {
+  background: #00ffc8;
+  box-shadow: 0 0 25px #00ffc8;
+}
+
+.cell.correct {
+  background: #4ade80; /* green */
+  box-shadow: 0 0 25px #4ade80;
+}
+
+.cell.wrong {
+  background: #f87171; /* red */
+  box-shadow: 0 0 25px #f87171;
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0) }
+  20%, 60% { transform: translateX(-6px) }
+  40%, 80% { transform: translateX(6px) }
+}
+
+#level {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #0ff;
+  margin-bottom: 6px;
+}
+
+#message {
+  font-size: 1.1rem;
+  margin-top: 12px;
+  min-height: 24px;
+  color: #a0f0f0;
+  font-weight: 500;
+}
